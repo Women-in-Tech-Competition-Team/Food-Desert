@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Issues Explorer</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        #map { height: 600px; }
+        .layer-control { background: white; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Community Issues Explorer</h1>
+    <div id="map"></div>
+    <div class="layer-control">
+        <h3>Map Layers</h3>
+        <input type="checkbox" id="layer1" checked> <label for="layer1">Environmental Issues</label><br>
+        <input type="checkbox" id="layer2" checked> <label for="layer2">Infrastructure Concerns</label><br>
+        <input type="checkbox" id="layer3" checked> <label for="layer3">Social Services</label>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([51.505, -0.09], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        var environmentalLayer = L.layerGroup().addTo(map);
+        var infrastructureLayer = L.layerGroup().addTo(map);
+        var socialServicesLayer = L.layerGroup().addTo(map);
+
+        // Sample data - replace with real data
+        L.marker([51.5, -0.09]).addTo(environmentalLayer).bindPopup('Air pollution hotspot');
+        L.marker([51.51, -0.1]).addTo(infrastructureLayer).bindPopup('Road maintenance needed');
+        L.marker([51.49, -0.08]).addTo(socialServicesLayer).bindPopup('Community center');
+
+        document.getElementById('layer1').onchange = function() {
+            this.checked ? map.addLayer(environmentalLayer) : map.removeLayer(environmentalLayer);
+        };
+        document.getElementById('layer2').onchange = function() {
+            this.checked ? map.addLayer(infrastructureLayer) : map.removeLayer(infrastructureLayer);
+        };
+        document.getElementById('layer3').onchange = function() {
+            this.checked ? map.addLayer(socialServicesLayer) : map.removeLayer(socialServicesLayer);
+        };
+    </script>
+</body>
+</html>
