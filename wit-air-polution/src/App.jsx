@@ -5,9 +5,7 @@ function App() {
 
   return (
     <>
-      <SIdeBar>tftftftftft</SIdeBar>
-      <Main/>
-      <Footer/>
+      helllon
     </>
   )
 }
