@@ -1,14 +1,15 @@
-export default function Footer() {
-    return(
+export default function Footer(props) {
+    const { showModal, handleToggleModal, data } = props
+
+    return (
         <footer>
+            <div className="bgGradient"></div>
             <div>
-                <h2>Los Angeles Map</h2>
-                <h1>Air Quality Project</h1>
+                <h1>APOD PROJECT</h1>
+                <h2>{data?.title}</h2>
             </div>
-            <button>
-                <div>
-                <i className="info-circle"></i>
-                </div>
+            <button onClick={handleToggleModal}>
+                <i className="fa-solid fa-circle-info"></i>
             </button>
         </footer>
     )
