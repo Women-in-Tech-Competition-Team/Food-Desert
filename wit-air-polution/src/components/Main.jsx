@@ -1,8 +1,8 @@
 export default function Main() {
     
     return (
-        <div >
-            
+        <div>
+        <img src="pomona tester.jpg" alt="Pomona" />
         </div>
     )
 }
