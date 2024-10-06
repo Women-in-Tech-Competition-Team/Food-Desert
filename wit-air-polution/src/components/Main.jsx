@@ -2,7 +2,7 @@ export default function Main() {
 
     return (
         <div>
-            hell
+            <img src="pomona tester.png" alt="pomona" />
         </div>
     )
 }
