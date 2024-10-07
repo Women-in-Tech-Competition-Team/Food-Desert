@@ -180,4 +180,65 @@ body{
     z-index: 9;
     transform: translateY(10px);
 }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
 
+
+li {
+    display: inline;
+    margin-right: 20px;
+}
+
+
+h1, h2 {
+    text-align: center;
+}
+
+
+.team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.team-member {
+    flex: 0 0 25%; 
+    text-align: center;
+    margin: 20px;
+}
+
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.about-page {
+    color: var(--text-color);
+}
+h1, p {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+p {
+    line-height: 1.2;
+    margin-top: 5px;
+}
+section {
+    margin-bottom: 80px;
+}
+h1, h2 {
+    margin-bottom: 5px;
+    padding-bottom: 0;
+}
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
