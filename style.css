@@ -135,7 +135,8 @@ body{
     justify-content: center;
     position: relative;
     font-size: var(--header-height);
-    padding-top: 10%;
+    padding-top: 5%;
+    padding-top: 5%;
     color: var(--second-color);
 }
 
