@@ -206,8 +206,15 @@ body{
     text-align: center;
     font-size: 4.5rem;
     color: var(--second-color);
+    padding-bottom: 3%;
 }
 
+.tea h2{
+    text-align: center;
+    color: var(--second-color);
+    padding-top: 3%;
+    font-size: var(--biggest-font-size);
+}
 .tea .team {
     display: flex;
     justify-content: center;
@@ -232,15 +239,6 @@ body{
     border-radius: 50%;
 }
 
-h1, p {
-    margin-top: 100px;
-    text-align: center;
-    font-size: 1.5rem;
-}
-p {
-    line-height: 1.2;
-    margin-top: 5px;
-}
 .ection{
     position: relative;
     width: 100%;
@@ -257,7 +255,6 @@ p {
 }
 
 .ection p{
-    line-height: 1.2;
     padding-top: 5%;
     color: var(--text-color);
     font-size: var(--normal-font-size);
