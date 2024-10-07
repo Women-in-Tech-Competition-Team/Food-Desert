@@ -89,16 +89,15 @@ body{
     justify-content: center;
     position: relative;
     font-size: var(--biggest-font-size);
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+    padding-top: 10%;
 }
 
-.section .wrapper-map{
+.wrapper-map{
     position: relative;
     overflow: hidden;
 }
 
-.section .wrapper-map iframe{
+.wrapper-map iframe{
     position: absolute;
     top: 0;
     left: 0;
