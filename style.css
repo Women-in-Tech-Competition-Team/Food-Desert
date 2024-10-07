@@ -97,6 +97,8 @@ body{
     flex-direction: column;
 }
 
+
+
 .top img{
     position: absolute;
     top: 0;
@@ -236,10 +238,4 @@ section {
 }
 h1, h2 {
     margin-bottom: 5px;
-    padding-bottom: 0;
-}
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    padding-bottom: 0;}
