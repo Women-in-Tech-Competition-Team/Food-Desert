@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Feedback Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        header {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        main {
+            display: flex;
+            flex: 1;
+        }
+        #map {
+            flex: 2;
+            background-color: #ecf0f1;
+        }
+        #feedback-form {
+            flex: 1;
+            padding: 1em;
+            background-color: #f9f9f9;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            margin-bottom: 1em;
+            padding: 0.5em;
+        }
+        button {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 0.5em;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+          <a href="#home.html" class="logo">WIT</a>
+          <div class="nav-menu" id="navMenu">
+            <ul>
+              <li><a href="home.html" class="link active">Home</a></li>
+              <li><a href="about.html" class="link">About</a></li>
+              <li><a href="feedback.html" class="link">Feedback</a></li>
+              <li><a href="community.html" class="link">Community Update</a></li>
+            </ul>
+          </div>
+        </nav>
+      
+    </div>
+    <header>
+        <h1>Community Feedback Map</h1>
+    </header>
+    <main>
+        <div id="map"></div>
+        <div id="feedback-form">
+            <h2>Add Your Feedback</h2>
+            <form id="submit-feedback">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="text" id="location" placeholder="Location (e.g., latitude, longitude)" required>
+                <textarea id="feedback" placeholder="Your Feedback" required></textarea>
+                <input type="file" id="image" accept="image/*">
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([51.505, -0.09], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Handle form submission
+        document.getElementById('submit-feedback').onsubmit = function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            var name = document.getElementById('name').value;
+            var location = document.getElementById('location').value.split(','); // Split latitude and longitude
+            var feedback = document.getElementById('feedback').value;
+
+            if (location.length === 2) {
+                var lat = parseFloat(location[0]);
+                var lon = parseFloat(location[1]);
+
+                // Add a marker to the map
+                var marker = L.marker([lat, lon]).addTo(map)
+                    .bindPopup(`<strong>${name}</strong><br>${feedback}`)
+                    .openPopup();
+
+                // Clear the form
+                document.getElementById('submit-feedback').reset();
+                alert("Feedback submitted successfully!");
+            } else {
+                alert("Please enter valid coordinates in the format 'latitude, longitude'.");
+            }
+        };
+    </script>
+</body>
+</html>

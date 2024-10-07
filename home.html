@@ -1,32 +1,35 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="Pomona" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <title>Pomona Mapping</title>
   </head>
   <body>
-<!-- Header right here-->
-    <header>
-      <a href="#" class="logo">WIT</a>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Feedback</a></li>
-        <li><a href="#">Document</a></li>
-      </ul>
-    </header>
-    <section>
+<!-- top header right here-->
+  <div class="wrapper">
+      <nav class="nav">
+        <a href="#home.html" class="logo">WIT</a>
+        <div class="nav-menu" id="navMenu">
+          <ul>
+            <li><a href="home.html" class="link active">Home</a></li>
+            <li><a href="about.html" class="link">About</a></li>
+            <li><a href="feedback.html" class="link">Feedback</a></li>
+            <li><a href="community.html" class="link">Community Update</a></li>
+          </ul>
+        </div>
+      </nav>
+  </div>
+
+    <div class="section">
       <h2 id="text">Food Desert in Southern California</h2>
       <!--Scetion img this line if needed, other wise replace this with the map image-->
-      <div class="wrapper">
+      <div class="wrapper-map">
 
         <iframe src="https://www.arcgis.com/apps/instant/exhibit/index.html?appid=ac56da13c09f4d069731276480f5c652" frameborder="0" style="border:0" allowfullscreen>iFrames are not supported on this page.</iframe>
-        <p>helloworld</p>
       </div>
-
-    </section>
+    </div>
   </body>
 </html>

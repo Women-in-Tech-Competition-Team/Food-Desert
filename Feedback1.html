@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community Feedback Map</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -58,7 +57,9 @@
         <h1>Community Feedback Map</h1>
     </header>
     <main>
-        <div id="map"></div>
+        <div id="map">
+            <!-- Map will be inserted here using JavaScript -->
+        </div>
         <div id="feedback-form">
             <h2>Add Your Feedback</h2>
             <form id="submit-feedback">
@@ -70,40 +71,10 @@
             </form>
         </div>
     </main>
-
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
-        // Initialize the map
-        var map = L.map('map').setView([51.505, -0.09], 13);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
-
-        // Handle form submission
-        document.getElementById('submit-feedback').onsubmit = function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            var name = document.getElementById('name').value;
-            var location = document.getElementById('location').value.split(','); // Split latitude and longitude
-            var feedback = document.getElementById('feedback').value;
-
-            if (location.length === 2) {
-                var lat = parseFloat(location[0]);
-                var lon = parseFloat(location[1]);
-
-                // Add a marker to the map
-                var marker = L.marker([lat, lon]).addTo(map)
-                    .bindPopup(`<strong>${name}</strong><br>${feedback}`)
-                    .openPopup();
-
-                // Clear the form
-                document.getElementById('submit-feedback').reset();
-                alert("Feedback submitted successfully!");
-            } else {
-                alert("Please enter valid coordinates in the format 'latitude, longitude'.");
-            }
-        };
+        // JavaScript code for map functionality and form submission would go here
+        // You'll need to integrate with a mapping library like Leaflet or Google Maps
+        // and implement the logic to add markers based on user submissions
     </script>
 </body>
 </html>
