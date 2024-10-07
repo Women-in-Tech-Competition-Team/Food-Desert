@@ -143,6 +143,15 @@ body{
     color: var(--second-color);
 }
 
+.section h1{
+    justify-content: center;
+    position: relative;
+    font-size: var(--header-height);
+    padding-top: 5%;
+    padding-top: 5%;
+    color: var(--second-color);
+}
+
 .section .wrapper-map{
     position: relative;
     overflow: hidden;
@@ -259,32 +268,29 @@ body{
     color: var(--text-color);
     font-size: var(--normal-font-size);
 }
-        #map {
-            height: 500px;
-            width: 100%;
-        }
-        .feedback-form {
-            margin: 20px;
-            padding: 20px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-        }
-        .pin {
-            width: 20px;
-            height: 20px;
-            background-color: red;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        .pin-info {
-            display: none;
-            position: absolute;
-            background-color: white;
-            border: 1px solid #ccc;
-            padding: 10px;
-            border-radius: 5px;
-            max-width: 200px;
-        }
-        .pin:hover .pin-info {
-            display: block;
-        }
+
+.feedback-form {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+.pin {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.pin-info {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 200px;
+}
+.pin:hover .pin-info {
+    display: block;
+}
